@@ -1,12 +1,12 @@
-// const headerTag = document.querySelector("h1");
-// headerTag.innerText = "Changing the doc!";
-//
-// headerTag.style.backgroundColor = 'var(--primary-orange)'
-// headerTag.style.fontSize = '64px'
+const data = [550, 420, 731, 420, 130, 670, 356, 243];
 
-const headerTags = document.querySelectorAll('h1');
-headerTags.forEach((h1) => {
-  const hue = 360 * Math.random();
-  h1.innerText = 'Things'
-  h1.style.backgroundColor = `hsl(${hue}, 100%, 50%)`
+const todaySvg = document.querySelector('svg');
+
+data.forEach((dataPoint, index) => {
+  const rectTag = document.createElementNS(`http://www.w3.org/2000/svg`, `rect`);
+  rectTag.setAttribute('x', 0);
+  rectTag.setAttribute('y', index * 50);
+  rectTag.setAttribute('width', dataPoint);
+  rectTag.setAttribute('height', '40');
+  todaySvg.append(rectTag);
 })
