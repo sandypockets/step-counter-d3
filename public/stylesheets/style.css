@@ -21,6 +21,19 @@ body {
 
   background-color: var(--background-main);
   color: var(--primary-blue);
+
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  min-height: 100vh;
+}
+
+nav {
+  background-color: var(--background-side);
+  padding: 48px;
+}
+
+main {
+  padding: 48px;
 }
 
 h1 {
@@ -33,8 +46,17 @@ h2 {
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
+  margin: 24px 0 0 0;
 }
 
-nav {
+p {
+  font-size: 24px;
+}
 
+rect {
+  fill: var(--primary-orange);
+}
+
+circle {
+  fill: var(--primary-blue);
 }
