@@ -24,6 +24,16 @@ const todayGroups = todaySvg
   .append('g')
   .attr('transform', (d, i) => {return `translate(${i * 36}, 0)`})
 
+// An invisible group of rectangles stretching across the canvas
+// This enables the hover states to trigger when the user hovers _above_ the bar
+todayGroups
+  .append('rect')
+  .attr('x', 0)
+  .attr('y', 0)
+  .attr('width', 24)
+  .attr('height', 140)
+  .attr('class', 'transparent')
+
 // Adding bars
 todayGroups
   .append('rect')
@@ -41,11 +51,14 @@ todayGroups
   .append('text')
   .attr('x', 12)
   .attr('y', 140)
-  .text((d, i) => {return i}) // Bottom text is = to the index, representing days
+  .attr('class', 'hours')
+  .text((d, i) => {return i}) // Bottom text is = to the index, representing hours
 
 // Text along top of bars
 todayGroups
   .append('text')
   .attr('x', 12)
   .attr('y', (d, i) => {return 110 - barScale(d)}) // Position the text above the bar based on the barScale and datapoint (d)
+  .attr('class', 'steps')
   .text((d, i) => {return d})
+
