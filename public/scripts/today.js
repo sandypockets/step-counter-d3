@@ -11,7 +11,7 @@ let todayData = [
   440, 471, 1321, 769, 1660, 663, 1329
 ]
 
-const todaySvg = d3.select('svg');
+const todaySvg = d3.select('svg.today');
 const barScale = d3.scaleLinear()
   .domain([0, 2000]) // Data input range
   .range([1, 112]) // Data output range
@@ -61,4 +61,3 @@ todayGroups
   .attr('y', (d, i) => {return 110 - barScale(d)}) // Position the text above the bar based on the barScale and datapoint (d)
   .attr('class', 'steps')
   .text((d, i) => {return d})
-
