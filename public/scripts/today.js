@@ -6,14 +6,12 @@ let monthData = [
 ]
 
 let todayData = [
-  51, 0, 0, 0, 0, 0, 0, 0,
-  293, 352, 1782, 644, 328, 828, 905,
-  371, 373, 440, 471, 1321, 769, 1660,
-  663, 1329
+  51, 0, 0, 0, 0, 0, 0, 0, 293, 352,
+  1782, 644, 328, 828, 905, 371, 373,
+  440, 471, 1321, 769, 1660, 663, 1329
 ]
 
 const todaySvg = d3.select('svg');
-
 const barScale = d3.scaleLinear()
   .domain([0, 2000]) // Data input range
   .range([1, 112]) // Data output range
@@ -25,7 +23,6 @@ const todayGroups = todaySvg
   .enter()
   .append('g')
   .attr('transform', (d, i) => {return `translate(${i * 36}, 0)`})
-
 
 // Adding bars
 todayGroups
@@ -39,15 +36,16 @@ todayGroups
   .attr('y', (d, i) => {return 120 - barScale(d)}) // Converting data to barScale params
   .attr('height', (d, i) => {return barScale(d)}) // Converting the data to the barScale params
 
-// Adding text
+// Text along bottom of bars
 todayGroups
   .append('text')
   .attr('x', 12)
   .attr('y', 140)
-  .text((d, i) => {return i})
+  .text((d, i) => {return i}) // Bottom text is = to the index, representing days
 
+// Text along top of bars
 todayGroups
   .append('text')
   .attr('x', 12)
-  .attr('y', 10)
+  .attr('y', (d, i) => {return 110 - barScale(d)}) // Position the text above the bar based on the barScale and datapoint (d)
   .text((d, i) => {return d})
