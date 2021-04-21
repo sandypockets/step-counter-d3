@@ -31,19 +31,23 @@ const todayGroups = todaySvg
 todayGroups
   .append('rect')
   .attr('x', 0) // Setting pixel width
-  .attr('y', (d, i) => {return 112 - barScale(d)}) // Converting data to barScale params
-  .attr('height', (d, i) => {return barScale(d)}) // Converting the data to the barScale params
+  .attr('y', (d, i) => {return 120}) // Converting data to barScale params
   .attr('width', 24)
+  .attr('height', 0) // Converting the data to the barScale params
+  .transition()
+  .delay((d, i) => {return i * 20})
+  .attr('y', (d, i) => {return 120 - barScale(d)}) // Converting data to barScale params
+  .attr('height', (d, i) => {return barScale(d)}) // Converting the data to the barScale params
 
 // Adding text
 todayGroups
   .append('text')
   .attr('x', 12)
-  .attr('y', 130)
+  .attr('y', 140)
   .text((d, i) => {return i})
 
 todayGroups
   .append('text')
   .attr('x', 12)
   .attr('y', 10)
-  .text((d, i) => { return d })
+  .text((d, i) => {return d})
