@@ -1,7 +1,3 @@
-// const todayData = [
-//   12, 110, 56, 85, 29, 123, 34, 56, 89, 12, 2, 67, 33, 99, 35, 13, 54, 54, 29, 10
-// ];
-
 let monthData = [
   8429, 10345, 13505, 10222, 11102, 5721, 8091,
   18081, 9123, 3724, 11401, 12230, 8534, 16034,
@@ -22,18 +18,31 @@ const barScale = d3.scaleLinear()
   .domain([0, 2000]) // Data input range
   .range([1, 112]) // Data output range
 
-todaySvg
-  .selectAll('rect')
+// Grouping bars and text
+const todayGroups = todaySvg
+  .selectAll('g')
   .data(todayData)
   .enter()
+  .append('g')
+
+
+// Adding bars
+todayGroups
   .append('rect')
   .attr('width', 24)
-  .attr('height', (dataPoint, index) => {
-    return barScale(dataPoint); // Converting the data to the barScale params
-  })
-  .attr('x', (dataPoint, index) => {
-    return 36 * index;
-  })
-  .attr('y', (dataPoint, index) => {
-    return 112 - barScale(dataPoint); // Converting data to barScale params
-  })
+  .attr('height', (d, i) => {return barScale(d)}) // Converting the data to the barScale params
+  .attr('x', (d, i) => {return 36 * i}) // Setting pixel width
+  .attr('y', (d, i) => {return 112 - barScale(d)}) // Converting data to barScale params
+
+// Adding text
+todayGroups
+  .selectAll('text')
+  .data(todayData)
+  .enter()
+  .append('text')
+  .attr('x', (d, i) => {return i * 36 + 12})
+  .attr('y', (d, i) => {return 130})
+  .text((d, i) => {return i})
+
+// Note: the dataPoint, index, and d, i variables are the same thing.
+// the full words were used for learning purposes
