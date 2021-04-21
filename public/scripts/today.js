@@ -24,7 +24,7 @@ const todayGroups = todaySvg
   .data(todayData)
   .enter()
   .append('g')
-  .attr('transform', (d, i) => {return `translate(${i * 30}, 0)`})
+  .attr('transform', (d, i) => {return `translate(${i * 36}, 0)`})
 
 
 // Adding bars
@@ -42,5 +42,8 @@ todayGroups
   .attr('y', 130)
   .text((d, i) => {return i})
 
-// Note: the dataPoint, index, and d, i variables are the same thing.
-// the full words were used for learning purposes
+todayGroups
+  .append('text')
+  .attr('x', 12)
+  .attr('y', 10)
+  .text((d, i) => { return d })
