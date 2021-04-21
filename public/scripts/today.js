@@ -29,10 +29,10 @@ const todayGroups = todaySvg
 // Adding bars
 todayGroups
   .append('rect')
-  .attr('width', 24)
-  .attr('height', (d, i) => {return barScale(d)}) // Converting the data to the barScale params
   .attr('x', (d, i) => {return 36 * i}) // Setting pixel width
   .attr('y', (d, i) => {return 112 - barScale(d)}) // Converting data to barScale params
+  .attr('height', (d, i) => {return barScale(d)}) // Converting the data to the barScale params
+  .attr('width', 24)
 
 // Adding text
 todayGroups
