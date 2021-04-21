@@ -60,3 +60,9 @@ rect {
 circle {
   fill: var(--primary-blue);
 }
+
+text {
+  fill: var(--secondary-orange);
+  text-anchor: middle;
+  font-size: 14px;
+}
