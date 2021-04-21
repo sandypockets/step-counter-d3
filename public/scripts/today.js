@@ -24,24 +24,22 @@ const todayGroups = todaySvg
   .data(todayData)
   .enter()
   .append('g')
+  .attr('transform', (d, i) => {return `translate(${i * 30}, 0)`})
 
 
 // Adding bars
 todayGroups
   .append('rect')
-  .attr('x', (d, i) => {return 36 * i}) // Setting pixel width
+  .attr('x', 0) // Setting pixel width
   .attr('y', (d, i) => {return 112 - barScale(d)}) // Converting data to barScale params
   .attr('height', (d, i) => {return barScale(d)}) // Converting the data to the barScale params
   .attr('width', 24)
 
 // Adding text
 todayGroups
-  .selectAll('text')
-  .data(todayData)
-  .enter()
   .append('text')
-  .attr('x', (d, i) => {return i * 36 + 12})
-  .attr('y', (d, i) => {return 130})
+  .attr('x', 12)
+  .attr('y', 130)
   .text((d, i) => {return i})
 
 // Note: the dataPoint, index, and d, i variables are the same thing.
