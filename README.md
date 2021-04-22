@@ -1,21 +1,14 @@
-# Express Template
-
-This template is a living, breathing organism. It will be improved upon over time, in an effort to reduce the amount of time to MVP when working with Express. 
-
-### Custom features:
-
-- None (yet!)
+# Step Counter
+Step Counter is a simple step counter interface, built with Express.js, and D3.js. The data behind the counter is currently static, however it could be quickly adapted to use live data. The barchart (representing number of steps taken each hour), and the circles (the number of steps taken each day) are created dynamically using D3. The purpose of this project is to gain familiarity with D3, therefore, it is heavily commented. 
 
 ## Getting Started
 
-1. Fork the project.
-2. Clone the project to your local machine.
-3. Run the `npm install` command to install the necessary dependencies. 
-4. Run the `npm start` command to start the server. The app can then be viewed in your browser, at [`localhost:3000`](localhost:3000)
+1. Fork or clone the repository
+2. From the directory root, run `npm install`
+3. Run the `npm start` command to start the server. The Step Counter can then be viewed in your browser, at [`localhost:3000`](localhost:3000)
 
-If you're new to Express, skip down to the bottom of the README for a TL;DR of the docs and getting started.
-
-### Dependencies
+## Dependencies
+D3 is included in the `public/scripts/` directory. Only EJS related dependencies require installation. 
 
 - [Cookie Parser](https://www.npmjs.com/package/cookie-parser): `~1.4.4`
 - [Debug](https://www.npmjs.com/package/debug): `~2.6.9`
@@ -24,15 +17,13 @@ If you're new to Express, skip down to the bottom of the README for a TL;DR of t
 - [HTTP Errors](https://www.npmjs.com/package/http-errors): `~1.6.3`
 - [Morgan](https://www.npmjs.com/package/morgan): `~1.9.1`
 
-### Dev Dependencies
+## Dev Dependencies
 
-## Project Roadmap
-Planned features to add to the template:
+## 
 
-- Navigation
-- Footer
-- Authentication (without database integration)
-- 
+# Express Template
+
+This template is a living, breathing organism. It will be improved upon over time, in an effort to reduce the amount of time to MVP when working with Express. 
 
 ### Contributing
 
