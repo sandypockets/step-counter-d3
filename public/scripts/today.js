@@ -27,9 +27,9 @@ todayGroups
   .attr('x', 0) // Setting pixel width
   .attr('y', (d, i) => {return 120}) // Converting data to barScale params
   .attr('width', 24)
-  .attr('height', 0) // Converting the data to the barScale params
-  .transition()
-  .delay((d, i) => {return i * 20})
+  .attr('height', 0) // Each bar height starts at zero
+  .transition() // Loading in the bar
+  .delay((d, i) => {return i * 35}) // Add a delay between each bar loading
   .attr('y', (d, i) => {return 120 - barScale(d)}) // Converting data to barScale params
   .attr('height', (d, i) => {return barScale(d)}) // Converting the data to the barScale params
 
