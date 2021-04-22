@@ -3,6 +3,8 @@ const barScale = d3.scaleLinear()
   .domain([0, 2000]) // Data input range
   .range([1, 112]) // Data output range
 
+const hourFormat = d3.format('02')
+
 // Grouping bars and text
 const todayGroups = todaySvg
   .selectAll('g')
@@ -39,7 +41,7 @@ todayGroups
   .attr('x', 12)
   .attr('y', 140)
   .attr('class', 'hours')
-  .text((d, i) => {return i}) // Bottom text is = to the index, representing hours
+  .text((d, i) => {return hourFormat(i)}) // Bottom text is = to the index, representing hours
 
 // Text along top of bars
 todayGroups
