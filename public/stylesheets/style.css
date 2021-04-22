@@ -51,16 +51,13 @@ h2 {
 
 p {
   font-size: 24px;
+  height: 10px;
 }
 
 rect {
   fill: var(--primary-orange);
   transition: fill 0.5s;
 }
-
-/*circle {*/
-/*  fill: var(--primary-blue);*/
-/*}*/
 
 text {
   fill: var(--secondary-orange);
