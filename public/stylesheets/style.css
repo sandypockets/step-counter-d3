@@ -112,3 +112,16 @@ circle.ring {
   stroke-width: 2px;
   opacity: 0.25;
 }
+
+text.day {
+  opacity: 1;
+  transition: opacity 0.25s;
+}
+
+g:hover text.day {
+  opacity: 0;
+}
+
+svg.month text {
+  fill: var(--primary-blue);
+}
