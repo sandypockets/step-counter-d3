@@ -44,10 +44,18 @@ monthGroups
   .ease(d3.easeCubicOut) // Load-in effect
   .attr('r', (d, i) => {return radiusScale(d)}) // The size the circle should grow to
 
-// Text along bottom of circles
+// Days along bottom of circles
 monthGroups
   .append('text') // Append text to the monthGroup
   .attr('class', 'day') // Give text a class of .day
   .attr('x', 0) // x position relative to monthGroup item
   .attr('y', 65) // y position relative to monthGroup item
   .text((d, i) => {return i + 1}) // Text to append
+
+// Steps on circles
+monthGroups
+  .append('text') // Append text to the monthGroup
+  .attr('class', 'steps') // Give text a class of .day
+  .attr('x', 0) // x position relative to monthGroup item
+  .attr('y', 65) // y position relative to monthGroup item
+  .text((d, i) => {return d}) // Text to append
