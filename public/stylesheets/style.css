@@ -33,7 +33,7 @@ nav {
 }
 
 main {
-  padding: 48px;
+  padding: 48px 0 48px 48px;
 }
 
 h1 {
@@ -58,9 +58,9 @@ rect {
   transition: fill 0.5s;
 }
 
-circle {
-  fill: var(--primary-blue);
-}
+/*circle {*/
+/*  fill: var(--primary-blue);*/
+/*}*/
 
 text {
   fill: var(--secondary-orange);
@@ -89,4 +89,26 @@ g:hover text.steps {
 
 rect.transparent {
   opacity: 0;
+}
+
+
+main.main-container {
+  display: flex;
+  justify-content: center;
+}
+
+circle.actual:hover {
+  fill: var(--primary-orange);
+  transition: fill 0.5s;
+}
+
+circle.actual {
+  fill: var(--primary-blue);
+}
+
+circle.ring {
+  fill: none;
+  stroke: var(--secondary-blue);
+  stroke-width: 2px;
+  opacity: 0.25;
 }
