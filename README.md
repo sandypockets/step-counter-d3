@@ -1,7 +1,7 @@
 # Step Counter
 Step Counter is a simple step counter interface, built with Express.js, and D3.js. The data behind the counter is currently static, however it could be quickly adapted to use live data. The barchart (representing number of steps taken each hour), and the circles (the number of steps taken each day) are created dynamically using D3. The purpose of this project is to gain familiarity with D3, therefore, it is heavily commented. 
 
-![https://github.com/sandypockets/step-counter-d3/blob/main/docs/step-counter-demo.gif?raw=true](https://github.com/sandypockets/step-counter-d3/blob/main/docs/step-counter-demo.gif?raw=true)
+![https://github.com/sandypockets/step-counter-d3/blob/main/docs/demo-screenshot.png?raw=true](https://github.com/sandypockets/step-counter-d3/blob/main/docs/demo-screenshot.png?raw=true)
 
 ## Getting Started
 
